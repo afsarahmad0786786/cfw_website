@@ -2,4 +2,24 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 
+.header-title1 {
+    font-size: 20px;
+    font-weight: 600;
+    background-image: conic-gradient(#553c9a 30%, #ee4b2b 40%, #ee4b2b 70%, #00c2cb 80%, #553c9a);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+  }
+.header-title2 {
+    font-size: 30px;
+    font-weight: 600;
+    background-image: conic-gradient(#553c9a 30%, #ee4b2b 40%, #ee4b2b 70%, #00c2cb 80%, #553c9a);
+    color: rgb(10, 65, 247);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+  }
+
+
 
