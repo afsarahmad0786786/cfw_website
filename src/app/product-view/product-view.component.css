@@ -1,0 +1,22 @@
+
+
+.Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: 18px;
+    font-family: Times;
+
+    /* make sure ★ appears correctly */
+    line-height: 1;
+    background: #6a6a6a;
+    border-radius: 20px;
+
+    &::before {
+        content: '★★★★★';
+        letter-spacing: 3px;
+        background: linear-gradient(90deg, #fc0 var(--percent), #fff var(--percent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+}
