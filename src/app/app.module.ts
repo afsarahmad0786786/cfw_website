@@ -13,6 +13,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { OrderComponent } from './order/order.component';
 import { ProductsComponent } from './products/products.component';
+import { SignComponent } from './sign/sign.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ProductsComponent } from './products/products.component';
     CarouselComponent,
     AboutusComponent,
     OrderComponent,
-    ProductsComponent
+    ProductsComponent,
+    SignComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

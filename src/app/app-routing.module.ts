@@ -5,6 +5,8 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { OrderComponent } from './order/order.component';
 import { ProductsComponent } from './products/products.component';
+import { SignComponent } from './sign/sign.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'product',
     component: ProductsComponent
+  },
+  {
+    path: 'auth',
+    component: SignComponent
+  },
+  {
+    path: 'auth/register',
+    component: RegisterComponent
   }
 ];
 

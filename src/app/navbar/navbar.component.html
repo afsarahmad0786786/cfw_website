@@ -10,24 +10,27 @@
   <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
 
-      <li class="nav-item mt-2">
+      <li class="nav-item mt-2 mx-5">
         <div class="form-check form-switch">
           <input #mode class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
             [(ngModel)]="checked" (change)="changeMode()">
-          <label class="form-check-label" for="flexSwitchCheckDefault">Change Mode | </label>
+          <label class="form-check-label" for="flexSwitchCheckDefault">Change Mode</label>
         </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home |  </a>
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a routerLink="auth" class="nav-link" href="#">Login</a>
       </li>
       <li class="nav-item">
-        <a routerLink="product" class="nav-link" href="#">Products | </a>
+        <a routerLink="product" class="nav-link" href="#">Products</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/order" class="nav-link" href="#">Orders |  </a>
+        <a routerLink="/order" class="nav-link" href="#">Orders</a>
       </li>
       <li class="nav-item">
-        <a routerLink ="/about" class="nav-link" href="#">About Us </a>
+        <a routerLink ="/about" class="nav-link" href="#">About Us</a>
       </li>
       <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
