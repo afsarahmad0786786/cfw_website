@@ -11,5 +11,6 @@ export class ProductsService {
   getProducts(categoryName:string) {
     let url = `https://fakestoreapi.com/products/category/${categoryName}`;
     return this.http.get(url);
+    
   }
 }
