@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     ProductViewComponent,
     FooterComponent,
     NavbarComponent,
-    CarouselComponent
+    CarouselComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
