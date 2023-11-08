@@ -1,47 +1,56 @@
-
-
-<div class="shadow bg-body-tertiary rounded p-2 mt-4 mb-3">{{ categoryName.toUpperCase() }}</div>
-
-
-
-<div class="row">
-    <div class="col-md-1">
-        <button routerLink="/"  class=" btn btn-primary">Back</button>
+<div class="container fluid-2">
+    <div class="shadow bg-body-tertiary d-flex justify-content-center rounded p-2 mt-4 mb-3">{{
+        categoryName.toUpperCase() }}</div>
+    <div class="row ">
+        <div class="col-md-1">
+            <button (click)="backClicked()" class=" btn btn-primary">Back</button>
+        </div>
+        <div class="col-md-5">
+            <button (click)="sortByPrice()" class="btn btn-primary mb-3">Sort By price</button>
+        </div>
+        <div class="col-md-6">
+            <input #search (keyup)="onChange(search.value)" type="text" class="form-control" placeholder="Search...">
+        </div>
     </div>
-    <div class="col-md-5">
-        <button (click)="sortByPrice()" class="btn btn-primary mb-3">Sort By price</button>
+    <div class="d-flex justify-content-center" *ngIf="spinnerLoading">
+        <div class="spinner-grow" role="status">
+        </div>
     </div>
-    <div class="col-md-6">
-        <input #search
-        
-        (keyup)="onChange(search.value)" type="text" class="form-control" placeholder="Search...">
+    <div *ngIf="products.length === 0 && dataLoaded">
+        <span>No records to display....</span>
     </div>
-</div>
-<div class="d-flex justify-content-center" *ngIf="spinnerLoading">
-    <div  class="spinner-grow" role="status">
-    </div>
-    </div>
-<div *ngIf="productList.length === 0 && dataLoaded">
-    <span>No records to display....</span>
-</div>
-<div class="row">
-    <div *ngFor="let product of productList"  class="col-md-3 mb-2">
-        <div class="card p-2" style="width: 18em; height: 100%;">
-            <button class="btn btn-primary btn-sm mb-3 rounded " style="width: 110px; margin-left: 155px; "
-                            (click)="addToCart(product)">Add to Cart</button>
-            <img [src]="product.image" style="height: 220px;" alt="" class="card-img-top">
-            
-            <div class="card-body">
-                <h5 class="card-title">{{product.title}}</h5>
-                <p style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden; " class="card-text">{{product.description}}</p>
-                <div class="d-flex justify-content-end mb-3">
-                <div class="col">Rating: {{ product.rating.rate }}/5
+    <div class="row">
+        <div *ngFor="let product of products" class="col-md-3 mb-2 mx-3">
+            <div class="card p-2" style="width: 18em; height: 100%;">
+                <div class="row  mb-3">
+                    <div class="col-md-4 mt-2"><label for="quantity">Quantity(DZ):</label></div>
+                    <div class="col-md-3">
+                        <select class="form-select mb-4" aria-label="Filter" #qty (change)="onSelected(qty.value)"
+                        style="width: 58px; height: 45px;" >
+                        <option default value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    </div>
+                    <div class="col-md-5"><button class="btn btn-primary btn-sm rounded d-flex"
+                            style="margin-left:auto ;" (click)="addToCart(product)">Place Order</button></div>
                 </div>
-                <div class="Stars p-1 ps-2" [style]="getRatings(product.rating.rate)"
-                    aria-label="Rating of this product is 2.3 out of 5.">
+
+                <img [src]="product.img" style="height: 210px;" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <!-- <p style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden; " class="card-text">{{product.description}}</p> -->
+                    <p>Price:{{product.price}} Rs</p>
                 </div>
-            </div>
-                <p>Price:{{product.price}}</p>
             </div>
         </div>
     </div>

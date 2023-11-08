@@ -7,15 +7,21 @@ import { OrderComponent } from './order/order.component';
 import { ProductsComponent } from './products/products.component';
 import { SignComponent } from './sign/sign.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouteGuardService } from './services/route-guard.service';
+import { HelpViewComponent } from './help-view/help-view.component';
+import { OtpPageComponent } from './otp-page/otp-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    // canActivate: [RouteGuardService]
   },
   {
     path: 'product/:categoryName',
-    component: ProductViewComponent
+    component: ProductViewComponent,
+    // canActivate: [RouteGuardService]
   },
   {
     path: 'about',
@@ -23,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'order',
-    component: OrderComponent
+    component: OrderComponent,
+    // canActivate: [RouteGuardService]
   },
   {
     path: 'product',
@@ -36,6 +43,20 @@ const routes: Routes = [
   {
     path: 'auth/register',
     component: RegisterComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [RouteGuardService]
+    // canActivate: authGuard
+  },
+  {
+    path: 'help',
+    component: HelpViewComponent,
+  },
+  {
+    path: 'auth/otp',
+    component: OtpPageComponent,
   }
 ];
 

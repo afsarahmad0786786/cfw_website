@@ -1,0 +1,16 @@
+.bg {
+    /* margin-top: 778px; */
+    background-size: 100%;
+    background-size: cover;
+    height: 575px;
+    color: #fff;
+    background-image: url("https://previews.123rf.com/images/mazirama/mazirama1503/mazirama150300574/38103124-registration-concept-with-interface-and-world-map-on-blue-background.jpg");
+  }
+
+
+  label {
+
+    fill: rgba(12, 11, 11, 0.479);
+    font-size: "20";
+    -webkit-text-fill-color: #641fee;
+  }

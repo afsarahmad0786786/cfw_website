@@ -1,7 +1,38 @@
-<h2 class="header-text">
+<!-- <h2 class="header-text">
 
-    To Place an order, Kindly contact to this number <small>9322043059</small>.We will deliver your order on time. 
+    To Place an order, Kindly contact to this number <small>9322043059</small>.We will deliver your order on time.
     <br>
     <h5>We are also working to place an order through our application.</h5>
 
-</h2>
+</h2> -->
+<div class="card">
+    <div class="card-header">
+        Preview Order
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let cart of orders" class="list-group-item">
+                <div class="row">
+                    <!-- <div class="col-1">{{ index + 1 }}</div> -->
+                    <div class="col-2"> <img [src]="cart.img" style="height: 3em; width: 3em;" alt=""
+                            class="card-img-top"></div>
+                    <!-- <div class="col-2">
+                        <button [disabled] ="cart.quantity == 1" class="btn btn-primary btn-sm"
+                            >-</button>
+                        {{ cart.quantity }}
+                        <button class="btn btn-primary btn-sm" >+</button>
+                    </div> -->
+                    <div class="col-2">{{ cart.productName }}</div>
+                    <div class="col-2">INR &nbsp;{{ cart.price.toFixed(2) }} x {{ cart.quantity }}</div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            
+            <div class="fw-bold">Total Price: INR{{ totalPrice.toFixed(2) }}</div>
+        </div>
+    </div>
+</div>

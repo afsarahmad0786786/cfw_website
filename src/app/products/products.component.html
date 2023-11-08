@@ -1,5 +1,5 @@
 <div class="container-fluid">
-<div class="bg-body-tertiary rounded p-2 mt-4 shadow d-flex justify-content-center">Our Products</div>
+    <div class="bg-body-tertiary rounded p-2 mt-4 shadow d-flex justify-content-center">Our Products</div>
     <div class="d-flex justify-content-center mt-3" *ngIf="dataLoaded">
         <div class="spinner-grow" role="status">
         </div>
@@ -7,7 +7,7 @@
     <div *ngIf="allCategory.length > 0" class="row  my-4">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); grid-gap:20px">
             <div *ngFor="let data of allCategory" class="col-md-3 mt-4">
-                <div class="card p-3 rounded" style=" width: 19em;" >
+                <div class="card p-3 rounded" style=" width: 19em;" role="button" (click)="productview(data.category)">
                     <img [src]="data.img" style="height: 250px;" alt="" class="card-img-top">
                     <div class="card-body">
                         <h4 class="header-title1  d-flex justify-content-center">{{data.category}}</h4>

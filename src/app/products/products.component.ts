@@ -19,4 +19,9 @@ export class ProductsComponent {
     })
   }
 
+  productview(category: string) {
+    console.log(category)
+    this.router.navigate([`product/${category}`])
+  }
+
 }

@@ -1,31 +1,21 @@
-<div class="container fluid">
-    <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Confirm Password</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Type your password again">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Mobile Number</label>
-          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="10 digit number">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Place</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Your Place">
-        </div>
-        <!-- <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
-        <button type="submit" class="btn btn-primary my-2">Submit</button>
-        <!-- <label class="mx-3"> Not Register? Please</label><button routerLink="register" type="submit" class="btn btn-primary ">Register</button> -->
-      </form>
-    </div>
+<div class="bg">
+  <app-modal *ngIf="message" [message]="message"></app-modal>
+  <h3 class="d-flex justify-content-center"> Register</h3>
+  <div class="container fluid d-flex justify-content-center">
+    <form [formGroup]="adduserForm" style="border: 1px solid; width: 45%;"
+      class="p-3 form rounded shadow bg-body-tertiary is-dark" (ngSubmit)="handleSubmit()">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input style="width: 100%;" formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+          aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input style="width: 100%;" formControlName="password" type="password" class="form-control"
+          id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary my-2 d-flex" style="margin-left: auto;">Register</button>
+    </form>
+  </div>
+</div>
